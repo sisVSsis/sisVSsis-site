@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,11 +19,6 @@ import {
   ListItemText,
 } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -32,12 +28,18 @@ import { GoProject } from 'react-icons/go';
 import InfoIcon from '@material-ui/icons/Info';
 import { FaPaperPlane } from 'react-icons/fa';
 import { RiGalleryFill } from 'react-icons/ri';
-import { BiCameraMovie } from 'react-icons/bi';
-import { MdMovieFilter } from 'react-icons/md';
 import { AiFillYoutube } from 'react-icons/ai';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuList from '@material-ui/core/MenuList';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FaGithub, FaStackOverflow } from 'react-icons/fa';
 import Tooltip from '@material-ui/core/Tooltip';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import { useDispatch } from 'react-redux';
+import * as actionType from '../constants/actionTypes';
+import decode from 'jwt-decode';
 
 const drawerWidth = 275;
 
@@ -169,6 +171,33 @@ export default function ElevateAppBar(props) {
   const [open, setOpen] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
   const anchorRef = React.useRef(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const history = useHistory();
+
+  const logout = useCallback(() => {
+    dispatch({ type: actionType.LOGOUT });
+
+    history.push('/');
+
+    setUser(null);
+  }, [dispatch, history]);
+
+  useEffect(
+    (logout) => {
+      const token = user?.token;
+
+      if (token) {
+        const decodedToken = decode(token);
+
+        if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+      }
+
+      setUser(JSON.parse(localStorage.getItem('profile')));
+    },
+    [location, user?.token, logout]
+  );
 
   const handleDrawerClose = () => {
     setOpen(false);
@@ -204,24 +233,19 @@ export default function ElevateAppBar(props) {
 
   const AppIcons = [
     {
-      href: 'https://github.com/sehermahmud',
-      icon: <FaGithub style={{ color: 'white' }} />,
-      title: "seher's github",
-    },
-    {
-      href: 'https://github.com/safinomg',
-      icon: <FaGithub style={{ color: 'white' }} />,
-      title: "safin's github",
+      href: 'https://github.com/sisVSsis',
+      icon: <FaGithub style={{ color: '#42a5f5' }} />,
+      title: 'github',
     },
     {
       href: 'https://stackoverflow.com/users/16891453/seher-mahmud',
-      icon: <FaStackOverflow style={{ color: 'white' }} />,
+      icon: <FaStackOverflow style={{ color: '#ffa726' }} />,
       title: 'Our Stackoverflow',
     },
     {
       href: 'https://www.youtube.com/channel/UCjA0qLX3fqLnrj4lu-VzhNA?view_as=subscriber',
-      icon: <AiFillYoutube style={{ color: 'white' }} />,
-      title: "Our youtube channel",
+      icon: <AiFillYoutube style={{ color: '#ef5350' }} />,
+      title: 'Our youtube channel',
     },
   ]
     .filter((linkConfig) => linkConfig)
@@ -249,31 +273,9 @@ export default function ElevateAppBar(props) {
       );
     });
 
-  const MenuLinks = [
-    { label: 'AboutUs', href: '/about' },
-    { label: 'ContactUs', href: '/contact' },
-  ]
-    .filter((linkConfig) => linkConfig)
-    .map(({ href, label }) => {
-      return (
-        <a
-          href={href}
-          style={{
-            textDecoration: 'none',
-            textTransform: 'none',
-            fontFamily: 'Handlee',
-            fontWeight: 'bold',
-            fontSize: '1.4rem',
-            color: 'black',
-          }}
-        >
-          <MenuItem>{label}</MenuItem>
-        </a>
-      );
-    });
-
   /* ------ Header ------ */
   const headerLinks = [
+    { label: 'Projects', href: '/projects' },
     { label: 'AboutUs', href: '/about' },
     { label: 'ContactUs', href: '/contact' },
   ]
@@ -304,49 +306,102 @@ export default function ElevateAppBar(props) {
   const header = (
     <Grid container direction="row" justify="flex-end">
       {matchesSM ? null : <div>{headerLinks}</div>}
-      {AppIcons}
-      {matchesSM ? (
-        <div>
-          <IconButton
-            ref={anchorRef}
-            aria-controls={openMenu ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}
-            color="inherit"
+      {user?.result ? (
+        <React.Fragment>
+          <div>
+            <Button
+              style={{
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1.3em',
+                fontFamily: 'Handlee',
+                fontWeight: 'bold',
+              }}
+            >
+              {user?.result.name}
+            </Button>
+          </div>
+          <div>
+            <IconButton
+              ref={anchorRef}
+              aria-controls={openMenu ? 'menu-list-grow' : undefined}
+              aria-haspopup="true"
+              onClick={handleToggle}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Popper
+              open={openMenu}
+              anchorEl={anchorRef.current}
+              role={undefined}
+              transition
+              disablePortal
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin:
+                      placement === 'bottom' ? 'center top' : 'center bottom',
+                  }}
+                >
+                  <Paper>
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList
+                        autoFocusItem={openMenu}
+                        id="menu-list-grow"
+                        onKeyDown={handleListKeyDown}
+                      >
+                        <MenuItem>{user?.result.name}</MenuItem>
+                        <MenuItem>{user?.result.email}</MenuItem>
+                        <Divider
+                          style={{
+                            marginBottom: '0.8em',
+                            marginRight: '1em',
+                            marginLeft: '1em',
+                          }}
+                        />
+                        <MenuItem>
+                          <Button
+                            variant="contained"
+                            color="secondary"
+                            onClick={logout}
+                          >
+                            Logout
+                          </Button>
+                        </MenuItem>
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
+          </div>
+        </React.Fragment>
+      ) : (
+        <Button
+          key="/auth"
+          style={{
+            color: 'white',
+            textTransform: 'none',
+            fontSize: '1.3em',
+          }}
+        >
+          <a
+            href="/auth"
+            style={{
+              textDecoration: 'none',
+              textTransform: 'none',
+              color: 'white',
+              fontFamily: 'Handlee',
+              fontWeight: 'bold',
+              fontSize: '1.4rem',
+            }}
           >
-            <MoreIcon />
-          </IconButton>
-          <Popper
-            open={openMenu}
-            anchorEl={anchorRef.current}
-            role={undefined}
-            transition
-            disablePortal
-          >
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                style={{
-                  transformOrigin:
-                    placement === 'bottom' ? 'center top' : 'center bottom',
-                }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList
-                      autoFocusItem={openMenu}
-                      id="menu-list-grow"
-                      onKeyDown={handleListKeyDown}
-                    >
-                      {MenuLinks}
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Popper>
-        </div>
-      ) : null}
+            Sign In
+          </a>
+        </Button>
+      )}
     </Grid>
   );
 
@@ -371,16 +426,6 @@ export default function ElevateAppBar(props) {
       label: 'Videos',
       href: '/videos',
       icon: <AiFillYoutube style={{ color: '#651fff' }} />,
-    },
-    {
-      label: 'Movie App',
-      href: '/movie',
-      icon: <BiCameraMovie style={{ color: '#651fff' }} />,
-    },
-    {
-      label: 'Anime App',
-      href: '/anime',
-      icon: <MdMovieFilter style={{ color: '#651fff' }} />,
     },
   ]
     .filter((linkConfig) => linkConfig)
@@ -477,8 +522,32 @@ export default function ElevateAppBar(props) {
           )}
         </IconButton>
       </div>
-      <Divider />
-      <br />
+      <Divider
+        color="secondary"
+        style={{ marginLeft: '1em', marginRight: '1em' }}
+      />
+      {user?.result ? (
+        <React.Fragment>
+          <div>
+            <Typography
+              style={{ marginLeft: '0.8em', fontSize: '1.3em' }}
+              variant="h6"
+            >
+              {user?.result.name}
+            </Typography>
+            <Typography
+              style={{ marginLeft: '0.8em', fontSize: '1.3em' }}
+              variant="h6"
+            >
+              {user?.result.email}
+            </Typography>
+          </div>
+          <Divider />
+          <br />
+        </React.Fragment>
+      ) : (
+        <div></div>
+      )}
       {drawerLinks1}
       <Divider />
       <p
@@ -494,6 +563,34 @@ export default function ElevateAppBar(props) {
         Communication
       </p>
       {drawerLinks2}
+      <Divider />
+      <div style={{ width: '100%', position: 'relative', marginLeft: '3em' }}>
+        {AppIcons}
+      </div>
+      {user?.result ? (
+        <React.Fragment>
+          <Divider />
+          <p
+            style={{
+              fontSize: '0.9em',
+              fontWeight: 300,
+              marginLeft: '1em',
+              marginBottom: '1.5em',
+              marginTop: '1em',
+              color: '#616161',
+            }}
+          >
+            Danger gone
+          </p>
+          <Button variant="contained" color="secondary" onClick={logout}>
+            Logout
+          </Button>
+        </React.Fragment>
+      ) : (
+        <div></div>
+      )}
+      <br />
+      <br />
     </SwipeableDrawer>
   );
 

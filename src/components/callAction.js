@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core';
 
 import sisVSsisLogo from '../images/sis-vs-sis/sis-vs-sisLogo.png';
@@ -8,7 +7,7 @@ import sisVSsisLogo2 from '../images/sis-vs-sis/sis_VS_sis_logo-2.png';
 
 const useStyles = makeStyles((theme) => ({
   background: {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${sisVSsisLogo})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${sisVSsisLogo})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
@@ -16,21 +15,18 @@ const useStyles = makeStyles((theme) => ({
     height: '49.5em',
     width: '100%',
     [theme.breakpoints.down('md')]: {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${sisVSsisLogo2} )`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      height: '97em',
+      height: '50em',
       width: '100%',
     },
     [theme.breakpoints.down('sm')]: {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${sisVSsisLogo2})`,
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${sisVSsisLogo2})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       height: '72em',
       width: '100%',
     },
     [theme.breakpoints.down('xs')]: {
-      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${sisVSsisLogo2})`,
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(${sisVSsisLogo2})`,
       height: '52em',
       width: '100%',
     },
@@ -64,14 +60,6 @@ export default function CallToAction(props) {
           textAlign: matchesSM ? 'center' : 'inherit',
         }}
       >
-        <Grid item className={classes.heroText}>
-          <Typography
-            variant="h1"
-            style={{ fontSize: '6em', color: 'white', fontFamily: 'Courgette' }}
-          >
-            Welcome to sisVSsis
-          </Typography>
-        </Grid>
       </Grid>
     </Grid>
   );
