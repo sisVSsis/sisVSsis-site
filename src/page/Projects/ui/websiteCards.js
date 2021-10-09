@@ -10,7 +10,10 @@ import Typography from '@material-ui/core/Typography';
 
 import Seher from './image/Seher/website/Seher.png';
 import BeachResort from './image/Seher/website/BeachResort.png';
+import MOMessage from './image/Seher/website/message.png';
+import fooder from './image/Seher/website/fooder.png';
 import PhoneStore from './image/Seher/website/PhoneStore.png';
+import ExcerTracker from './image/Seher/website/excertracker.png';
 import MyMovieList from './image/Seher/website/MyMovieList.png';
 import YourExpense from './image/Seher/website/YourExpense.png';
 import FavoriteMovies from './image/Seher/website/FavoriteMovies.png';
@@ -79,6 +82,18 @@ export default function GameCards() {
       href: 'http://react-phone-store-recording-seher.netlify.app/',
     },
     {
+      image: `${ExcerTracker}`,
+      title: 'Excerise Tracker',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://etracker.netlify.app',
+    },
+    {
+      image: `${MOMessage}`,
+      title: 'MOMessage',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://momessage.netlify.app',
+    },
+    {
       image: `${SeherShop}`,
       title: 'Seher shop',
       MadeBy: 'Seher Mahmud',
@@ -107,6 +122,12 @@ export default function GameCards() {
       title: 'MyShop',
       MadeBy: 'Seher Mahmud',
       href: 'https://mini-admin-shop-seher-demo.web.app',
+    },
+    {
+      image: `${fooder}`,
+      title: 'fooderOrder, DemoApp',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://fooderorder.netlify.app',
     },
     {
       image: `${UnconventionalCalculator}`,
