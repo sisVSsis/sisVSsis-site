@@ -12,7 +12,9 @@ import Seher from './image/Seher/website/Seher.png';
 import BeachResort from './image/Seher/website/BeachResort.png';
 import MOMessage from './image/Seher/website/message.png';
 import fooder from './image/Seher/website/fooder.png';
+import AuthFBDemo from './image/Seher/website/AuthFBDemo.png'
 import PhoneStore from './image/Seher/website/PhoneStore.png';
+import ReduxShopDemo from './image/Seher/website/ReduxShopDemo.png';
 import ExcerTracker from './image/Seher/website/excertracker.png';
 import MyMovieList from './image/Seher/website/MyMovieList.png';
 import YourExpense from './image/Seher/website/YourExpense.png';
@@ -32,16 +34,16 @@ const useStyles = makeStyles((theme) => ({
       width: 331,
     },
     [theme.breakpoints.down('lg')]: {
-      width: 320,
-    },
-    [theme.breakpoints.down('md')]: {
       width: 310,
     },
+    [theme.breakpoints.down('md')]: {
+      width: 313,
+    },
     [theme.breakpoints.down('sm')]: {
-      width: 303,
+      width: 300,
     },
     [theme.breakpoints.down('xs')]: {
-      width: 300,
+      width: '100%',
     },
   },
   media: {
@@ -76,16 +78,16 @@ export default function GameCards() {
       href: 'https://react-beach-resort-recording-seher.netlify.app',
     },
     {
+      image: `${SeherShop}`,
+      title: 'Seher shop',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://seher-shopping.herokuapp.com/',
+    },
+    {
       image: `${PhoneStore}`,
       title: 'PhoneStore',
       MadeBy: 'Seher Mahmud',
       href: 'http://react-phone-store-recording-seher.netlify.app/',
-    },
-    {
-      image: `${ExcerTracker}`,
-      title: 'Excerise Tracker',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://etracker.netlify.app',
     },
     {
       image: `${MOMessage}`,
@@ -94,16 +96,28 @@ export default function GameCards() {
       href: 'https://momessage.netlify.app',
     },
     {
-      image: `${SeherShop}`,
-      title: 'Seher shop',
+      image: `${ExcerTracker}`,
+      title: 'Excerise Tracker',
       MadeBy: 'Seher Mahmud',
-      href: 'https://seher-shopping.herokuapp.com/',
+      href: 'https://etracker.netlify.app',
     },
     {
       image: `${YourExpense}`,
       title: 'Your Expense App (demo)',
       MadeBy: 'Seher Mahmud',
       href: 'https://yourexpenseapp.netlify.app',
+    },
+    {
+      image: `${fooder}`,
+      title: 'fooderOrder, DemoApp',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://fooderorder.netlify.app',
+    },
+    {
+      image: `${AuthFBDemo}`,
+      title: 'Auth Firebase Demo',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://authfbdemo.netlify.app',
     },
     {
       image: `${MyMovieList}`,
@@ -124,16 +138,16 @@ export default function GameCards() {
       href: 'https://mini-admin-shop-seher-demo.web.app',
     },
     {
-      image: `${fooder}`,
-      title: 'fooderOrder, DemoApp',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://fooderorder.netlify.app',
-    },
-    {
       image: `${UnconventionalCalculator}`,
       title: 'UnconventionalCalculator',
       MadeBy: 'Seher Mahmud',
       href: 'https://unconventional-calculator-seher-demo.netlify.app',
+    },
+    {
+      image: `${ReduxShopDemo}`,
+      title: 'ReduxShopDemo',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://reduxshopdemo.netlify.app',
     },
     {
       image: `${ProjectPlanner}`,

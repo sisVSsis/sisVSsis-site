@@ -16,7 +16,9 @@ import ExcerTracker from './image/Seher/website/excertracker.png';
 import fooder from './image/Seher/website/fooder.png';
 import MyMovieList from './image/Seher/website/MyMovieList.png';
 import FavoriteMovies from './image/Seher/website/FavoriteMovies.png';
+import AuthFBDemo from './image/Seher/website/AuthFBDemo.png'
 import MyShop from './image/Seher/website/MyShop.png';
+import ReduxShopDemo from './image/Seher/website/ReduxShopDemo.png';
 import Name from './image/Seher/website/Name.png';
 import ProjectPlanner from './image/Seher/website/ProjectPlanner.png';
 import UnconventionalCalculator from './image/Seher/website/UnconventionalCalculator.png';
@@ -44,16 +46,16 @@ const useStyles = makeStyles((theme) => ({
       width: 331,
     },
     [theme.breakpoints.down('lg')]: {
-      width: 320,
-    },
-    [theme.breakpoints.down('md')]: {
       width: 310,
     },
+    [theme.breakpoints.down('md')]: {
+      width: 313,
+    },
     [theme.breakpoints.down('sm')]: {
-      width: 303,
+      width: 300,
     },
     [theme.breakpoints.down('xs')]: {
-      width: 300,
+      width: '100%',
     },
   },
   media: {
@@ -88,18 +90,6 @@ export default function GameCards() {
       href: 'https://react-beach-resort-recording-seher.netlify.app',
     },
     {
-      image: `${MOMessage}`,
-      title: 'MOMessage',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://momessage.netlify.app',
-    },
-    {
-      image: `${ExcerTracker}`,
-      title: 'Excerise Tracker',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://etracker.netlify.app',
-    },
-    {
       image: `${SeherShop}`,
       title: 'Seher shop',
       MadeBy: 'Seher Mahmud',
@@ -112,6 +102,18 @@ export default function GameCards() {
       href: 'http://react-phone-store-recording-seher.netlify.app/',
     },
     {
+      image: `${MOMessage}`,
+      title: 'MOMessage',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://momessage.netlify.app',
+    },
+    {
+      image: `${ExcerTracker}`,
+      title: 'Excerise Tracker',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://etracker.netlify.app',
+    },
+    {
       image: `${UFOhunter}`,
       title: 'UFO Hunter',
       MadeBy: 'Safin Mahmud',
@@ -122,6 +124,30 @@ export default function GameCards() {
       title: 'Your Expense App (demo)',
       MadeBy: 'Seher Mahmud',
       href: 'https://yourexpenseapp.netlify.app',
+    },
+    {
+      image: `${fooder}`,
+      title: 'fooderOrder, DemoApp',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://fooderorder.netlify.app',
+    },
+    {
+      image: `${AuthFBDemo}`,
+      title: 'Auth Firebase Demo',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://authfbdemo.netlify.app',
+    },
+    {
+      image: `${MonterKiller}`,
+      title: 'MonterKiller',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://monster-killer-seher-demo-game.netlify.app',
+    },
+    {
+      image: `${RPS}`,
+      title: 'Rock Paper Sissors',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://rock-paper-scissors-seher-demo-game.netlify.app',
     },
     {
       image: `${MyMovieList}`,
@@ -142,28 +168,16 @@ export default function GameCards() {
       href: 'https://mini-admin-shop-seher-demo.web.app',
     },
     {
-      image: `${fooder}`,
-      title: 'fooderOrder, DemoApp',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://fooderorder.netlify.app',
-    },
-    {
-      image: `${MonterKiller}`,
-      title: 'MonterKiller',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://monster-killer-seher-demo-game.netlify.app',
-    },
-    {
-      image: `${RPS}`,
-      title: 'Rock Paper Sissors',
-      MadeBy: 'Seher Mahmud',
-      href: 'https://rock-paper-scissors-seher-demo-game.netlify.app',
-    },
-    {
       image: `${dino}`,
       title: 'Dino',
       MadeBy: 'Seher Mahmud',
       href: 'https://seher-dino.netlify.app',
+    },
+    {
+      image: `${ReduxShopDemo}`,
+      title: 'ReduxShopDemo',
+      MadeBy: 'Seher Mahmud',
+      href: 'https://reduxshopdemo.netlify.app',
     },
     {
       image: `${MemoryGame}`,

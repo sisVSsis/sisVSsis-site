@@ -92,7 +92,7 @@ export default function ProjectHeader(props) {
     { label: 'All', href: '/projects' },
     { label: 'Websites', href: '/projects/websites' },
     { label: 'Games', href: '/projects/games' },
-    { label: 'More', href: '/projects/More' },
+    { label: 'Others', href: '/projects/More' },
   ]
     .filter((linkConfig) => linkConfig)
     .map(({ href, label }) => {
