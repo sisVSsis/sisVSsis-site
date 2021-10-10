@@ -24,22 +24,6 @@ export default function Contact() {
           sm
           style={{ marginRight: '1em', marginLeft: '1em' }}
         >
-          <Email />
-        </Grid>
-        <Grid
-          item
-          container
-          direction="column"
-          sm
-          style={{ marginRight: '1em', marginLeft: '1em'  }}
-        >
-          <div
-            style={{ border: '2px solid pink', width: '45em', height: '22em' }}
-          >
-            <div style={{ margin: '1em' }}>
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
-            </div>
-          </div>
         </Grid>
         <Grid
           item
@@ -57,6 +41,22 @@ export default function Contact() {
             }}
           >
             <Posts setCurrentId={setCurrentId} />
+          </div>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          sm
+          style={{ marginRight: '1em', marginLeft: '1em'  }}
+        >
+          <Email />
+          <div
+            style={{ border: '2px solid pink', width: '45em', height: '22em' }}
+          >
+            <div style={{ margin: '1em' }}>
+            <Form currentId={currentId} setCurrentId={setCurrentId} />
+            </div>
           </div>
         </Grid>
       </Grid>

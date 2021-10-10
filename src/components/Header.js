@@ -40,6 +40,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { useDispatch } from 'react-redux';
 import * as actionType from '../constants/actionTypes';
 import decode from 'jwt-decode';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
 
 const drawerWidth = 275;
 
@@ -426,6 +427,11 @@ export default function ElevateAppBar(props) {
       label: 'Videos',
       href: '/videos',
       icon: <AiFillYoutube style={{ color: '#651fff' }} />,
+    },
+    {
+      label: 'SignIn',
+      href: '/auth',
+      icon: <LockOpenIcon style={{ color: '#651fff' }} />,
     },
   ]
     .filter((linkConfig) => linkConfig)
