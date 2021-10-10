@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:4002' });
+const API = axios.create({ baseURL: 'https://sis-vs-sis.herokuapp.com' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
