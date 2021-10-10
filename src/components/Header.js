@@ -428,11 +428,6 @@ export default function ElevateAppBar(props) {
       href: '/videos',
       icon: <AiFillYoutube style={{ color: '#651fff' }} />,
     },
-    {
-      label: 'SignIn',
-      href: '/auth',
-      icon: <LockOpenIcon style={{ color: '#651fff' }} />,
-    },
   ]
     .filter((linkConfig) => linkConfig)
     .map(({ label, href, icon }) => {
@@ -555,6 +550,33 @@ export default function ElevateAppBar(props) {
         <div></div>
       )}
       {drawerLinks1}
+      {user?.result ? (
+        <div></div>
+      ) : (
+        <a
+          href="/auth"
+          underline="none"
+          className="padding: 0"
+          style={{
+            color: '#e91e63',
+            textDecoration: 'none',
+          }}
+        >
+          <List style={{ padding: 0 }}>
+            <ListItem
+              key="/auth"
+              button
+              color="inherit"
+              className={classes.link}
+            >
+              <ListItemIcon>
+                <LockOpenIcon style={{ color: '#651fff' }} />
+              </ListItemIcon>
+              <ListItemText primary="SignIn" />
+            </ListItem>
+          </List>
+        </a>
+      )}
       <Divider />
       <p
         style={{
