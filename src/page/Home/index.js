@@ -3,12 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { useTheme, Grid, useMediaQuery } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
-import Websites from '../../images/assets/Websites.png';
 import CallAction from '../../components/callAction';
-
 import { useDispatch } from 'react-redux';
 import * as actionType from '../../constants/actionTypes';
 import decode from 'jwt-decode';
+
+const Websites = 'https://i.imgur.com/ZnksoCI.png';
 
 const useStyles = makeStyles((theme) => ({
   summary: {

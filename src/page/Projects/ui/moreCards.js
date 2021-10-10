@@ -9,9 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
-import Name from './image/Seher/website/Name.png';
-import CupAnimation from './image/Safin/games/CupAnimation.png';
-import DifferentDinosaurs from './image/Safin/website/DifferentDinosaurs.png';
+const Name = 'https://i.imgur.com/OhKcH8f.png';
+
+const DifferentDinosaurs = 'https://i.imgur.com/1iT3sxh.png';
+const CupAnimation = 'https://i.imgur.com/h4vjYsd.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -9,36 +9,37 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
-import BeachResort from './image/Seher/website/BeachResort.png';
-import PhoneStore from './image/Seher/website/PhoneStore.png';
-import MOMessage from './image/Seher/website/message.png';
-import ExcerTracker from './image/Seher/website/excertracker.png';
-import fooder from './image/Seher/website/fooder.png';
-import MyMovieList from './image/Seher/website/MyMovieList.png';
-import FavoriteMovies from './image/Seher/website/FavoriteMovies.png';
-import AuthFBDemo from './image/Seher/website/AuthFBDemo.png'
-import MyShop from './image/Seher/website/MyShop.png';
-import ReduxShopDemo from './image/Seher/website/ReduxShopDemo.png';
-import Name from './image/Seher/website/Name.png';
-import ProjectPlanner from './image/Seher/website/ProjectPlanner.png';
-import UnconventionalCalculator from './image/Seher/website/UnconventionalCalculator.png';
-import Seher from './image/Seher/website/Seher.png';
-import SeherShop from './image/Seher/website/seher-shop.png';
-import MonterKiller from './image/Seher/games/MonterKiller.png';
-import RPS from './image/Seher/games/RPS.png';
-import YourExpense from './image/Seher/website/YourExpense.png';
-import dino from './image/Seher/games/dino.png';
+const BeachResort = 'https://i.imgur.com/aLeKRQl.png';
+const PhoneStore = 'https://i.imgur.com/6bnl1c5.png';
+const MOMessage = 'https://i.imgur.com/DOvehAa.png';
+const ExcerTracker = 'https://i.imgur.com/QmKz2Kk.png';
+const fooder = 'https://i.imgur.com/SCx8CDB.png';
+const MyMovieList = 'https://i.imgur.com/viauFtZ.png';
+const FavoriteMovies = 'https://i.imgur.com/F71apbo.png';
+const AuthFBDemo = 'https://i.imgur.com/eADvtZa.png'
+const MyShop = 'https://i.imgur.com/F19OvFh.png';
+const ReduxShopDemo = 'https://i.imgur.com/Vj1w2zj.png';
+const Name = 'https://i.imgur.com/OhKcH8f.png';
+const ProjectPlanner = 'https://i.imgur.com/iM598Nz.png';
+const UnconventionalCalculator = 'https://i.imgur.com/m97XMVD.png';
+const Seher = 'https://i.imgur.com/FT3Gf6s.png';
+const SeherShop = 'https://i.imgur.com/lNKiR5t.png';
+const YourExpense = 'https://i.imgur.com/I5S0Kvr.png';
+const MonterKiller = 'https://i.imgur.com/i8IbuYC.png';
+const RPS = 'https://i.imgur.com/r6TlssV.png';
+const dino = 'https://i.imgur.com/91OHEL0.png';
 
-import DifferentDinosaurs from './image/Safin/website/DifferentDinosaurs.png';
-import UFOhunter from './image/Safin/games/UFOhunter.png';
-import MemoryGame from './image/Safin/games/MemoryGame.png';
-import SpaceImadrsGame from './image/Safin/games/SpaceImadrsGame.png';
-import FroggerGame from './image/Safin/games/FroggerGame.png';
-import WhackAMoleGame from './image/Safin/games/WhackAMoleGame.png';
-import SnakeGame from './image/Safin/games/SnakeGame.png';
-import ConnectFourGame from './image/Safin/games/ConnectFourGame.png';
-import CupAnimation from './image/Safin/games/CupAnimation.png';
-import vacationTime from './image/Safin/website/vacationTime.png';
+const DifferentDinosaurs = 'https://i.imgur.com/1iT3sxh.png';
+const UFOhunter = 'https://i.imgur.com/CBbMzuu.png';
+const MemoryGame = 'https://i.imgur.com/RFEjQ4e.png';
+const SpaceImadrsGame = 'https://i.imgur.com/vPqHAAu.png';
+const FroggerGame = 'https://i.imgur.com/QZuqGy1.png';
+const WhackAMoleGame = 'https://i.imgur.com/cEaDMSO.png';
+const SnakeGame = 'https://i.imgur.com/hsklzu2.png';
+const ConnectFourGame = 'https://i.imgur.com/U9KhBDk.png';
+const CupAnimation = 'https://i.imgur.com/h4vjYsd.png';
+const vacationTime = 'https://i.imgur.com/uN4BcVg.png';
+const Tetris = 'https://i.imgur.com/2dlgfnW.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -148,6 +149,12 @@ export default function GameCards() {
       title: 'Rock Paper Sissors',
       MadeBy: 'Seher Mahmud',
       href: 'https://rock-paper-scissors-seher-demo-game.netlify.app',
+    },
+    {
+      image: `${Tetris}`,
+      title: 'Tetris Game',
+      MadeBy: 'Safin Mahmud',
+      href: 'https://tetris-game-safin.netlify.app/',
     },
     {
       image: `${MyMovieList}`,

@@ -7,26 +7,25 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
-import Seher from './image/Seher/website/Seher.png';
-import BeachResort from './image/Seher/website/BeachResort.png';
-import MOMessage from './image/Seher/website/message.png';
-import fooder from './image/Seher/website/fooder.png';
-import AuthFBDemo from './image/Seher/website/AuthFBDemo.png'
-import PhoneStore from './image/Seher/website/PhoneStore.png';
-import ReduxShopDemo from './image/Seher/website/ReduxShopDemo.png';
-import ExcerTracker from './image/Seher/website/excertracker.png';
-import MyMovieList from './image/Seher/website/MyMovieList.png';
-import YourExpense from './image/Seher/website/YourExpense.png';
-import FavoriteMovies from './image/Seher/website/FavoriteMovies.png';
-import MyShop from './image/Seher/website/MyShop.png';
-import ProjectPlanner from './image/Seher/website/ProjectPlanner.png';
-import UnconventionalCalculator from './image/Seher/website/UnconventionalCalculator.png';
-import SeherShop from './image/Seher/website/seher-shop.png';
-
-import vacationTime from './image/Safin/website/vacationTime.png';
-
 import { Grid, useMediaQuery } from '@material-ui/core';
+
+const BeachResort = 'https://i.imgur.com/aLeKRQl.png';
+const PhoneStore = 'https://i.imgur.com/6bnl1c5.png';
+const MOMessage = 'https://i.imgur.com/DOvehAa.png';
+const ExcerTracker = 'https://i.imgur.com/QmKz2Kk.png';
+const fooder = 'https://i.imgur.com/SCx8CDB.png';
+const MyMovieList = 'https://i.imgur.com/viauFtZ.png';
+const FavoriteMovies = 'https://i.imgur.com/F71apbo.png';
+const AuthFBDemo = 'https://i.imgur.com/eADvtZa.png'
+const MyShop = 'https://i.imgur.com/F19OvFh.png';
+const ReduxShopDemo = 'https://i.imgur.com/Vj1w2zj.png';
+const ProjectPlanner = 'https://i.imgur.com/iM598Nz.png';
+const UnconventionalCalculator = 'https://i.imgur.com/m97XMVD.png';
+const Seher = 'https://i.imgur.com/FT3Gf6s.png';
+const SeherShop = 'https://i.imgur.com/lNKiR5t.png';
+const YourExpense = 'https://i.imgur.com/I5S0Kvr.png';
+
+const vacationTime = 'https://i.imgur.com/uN4BcVg.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -2,8 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles, useTheme, useMediaQuery } from '@material-ui/core';
 
-import sisVSsisLogo from '../images/sis-vs-sis/sis-vs-sisLogo.png';
-import sisVSsisLogo2 from '../images/sis-vs-sis/sis_VS_sis_logo-2.png';
+const sisVSsisLogo2 = 'https://i.imgur.com/TtjbxbM.png';
+const sisVSsisLogo = 'https://i.imgur.com/iIBdmoD.png';
 
 const useStyles = makeStyles((theme) => ({
   background: {

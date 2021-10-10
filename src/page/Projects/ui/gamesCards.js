@@ -9,17 +9,18 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid, useMediaQuery } from '@material-ui/core';
 
-import MonterKiller from './image/Seher/games/MonterKiller.png';
-import RPS from './image/Seher/games/RPS.png';
-import dino from './image/Seher/games/dino.png';
+const MonterKiller = 'https://i.imgur.com/i8IbuYC.png';
+const RPS = 'https://i.imgur.com/r6TlssV.png';
+const dino = 'https://i.imgur.com/91OHEL0.png';
 
-import UFOhunter from './image/Safin/games/UFOhunter.png';
-import MemoryGame from './image/Safin/games/MemoryGame.png';
-import SpaceImadrsGame from './image/Safin/games/SpaceImadrsGame.png';
-import FroggerGame from './image/Safin/games/FroggerGame.png';
-import WhackAMoleGame from './image/Safin/games/WhackAMoleGame.png';
-import SnakeGame from './image/Safin/games/SnakeGame.png';
-import ConnectFourGame from './image/Safin/games/ConnectFourGame.png';
+const UFOhunter = 'https://i.imgur.com/CBbMzuu.png';
+const MemoryGame = 'https://i.imgur.com/RFEjQ4e.png';
+const SpaceImadrsGame = 'https://i.imgur.com/vPqHAAu.png';
+const FroggerGame = 'https://i.imgur.com/QZuqGy1.png';
+const WhackAMoleGame = 'https://i.imgur.com/cEaDMSO.png';
+const SnakeGame = 'https://i.imgur.com/hsklzu2.png';
+const ConnectFourGame = 'https://i.imgur.com/U9KhBDk.png';
+const Tetris = 'https://i.imgur.com/2dlgfnW.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,6 +76,12 @@ export default function WebsiteCards() {
       title: 'Dino',
       MadeBy: 'Seher Mahmud',
       href: 'https://seher-dino.netlify.app',
+    },
+    {
+      image: `${Tetris}`,
+      title: 'Tetris Game',
+      MadeBy: 'Safin Mahmud',
+      href: 'https://tetris-game-safin.netlify.app/',
     },
     {
       image: `${MemoryGame}`,
